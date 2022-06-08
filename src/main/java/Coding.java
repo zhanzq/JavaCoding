@@ -72,6 +72,16 @@ public class Coding {
         testStack();
         System.out.println(convertToBase7(100));
         testLambda();
+        testConvert();
+        testStringBuilder();
+    }
+
+    public static void testStringBuilder(){
+        StringBuilder sb = new StringBuilder("hello, world!");
+        // common method: append, delete, insert, reverse, indexOf
+        System.out.println("origin string: " + sb);
+        sb.delete(5, 7);
+        System.out.println("after delete: " + sb);
     }
 
     public static void testString(){
@@ -88,8 +98,42 @@ public class Coding {
         printList(lst);
     }
 
+    public static void testConvert(){
+        // convert string to int
+        String num = "123038";
+        int val = Integer.parseInt(num);
+        System.out.println("input string: " + num + ", output val: " + val);
+
+        // convert int to string
+        String num2 = Integer.toString(val);
+        System.out.println("input val: " + val + ", output string: " + num2);
+
+        // convert string to char[]
+        String s = "hello, world!";
+        char[] lst = s.toCharArray();
+        System.out.println("input string: " + s + ", output char array: " + new String(lst));
+
+        // convert char[] to string
+        String s2 = new String(lst);
+        System.out.println("input char array: " + new String(lst) + ", output string: " + s2);
+
+
+    }
+
     public static void testHashMap(){
         HashMap<String, Integer> mp = new HashMap<>();
+        // common methods: put, get, remove, keySet, containsKey, containsValue,
+        // entrySet
+        mp.put("hello", 10);
+        for(String key: mp.keySet()){
+            int val = mp.get(key);
+            System.out.println("key: " + key + ", val: " + val);
+        }
+        for(Map.Entry<String, Integer> it : mp.entrySet()){
+            String key = it.getKey();
+            int val = it.getValue();
+            System.out.println("key: " + key + ", val: " + val);
+        }
         mp.put("world", 10);
         mp.put("hello", 3);
         printMap(mp);
