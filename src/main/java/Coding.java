@@ -71,6 +71,7 @@ public class Coding {
         testChar();
         testStack();
         System.out.println(convertToBase7(100));
+        testLambda();
     }
 
     public static void testString(){
@@ -149,6 +150,20 @@ public class Coding {
         System.out.println("front: " + front);
         int val = stk.pop();
         System.out.println("pop val: " + val);
+    }
+
+    public static void testLambda(){
+        Integer[][] lst = {{1,2,3}, {1,3,2}};
+        Arrays.sort(lst, (a, b)->{
+            if(!a[0].equals(b[0])){
+                return a[0] - b[0]; // ascend order
+            }else{
+                return b[1] - a[1]; // descend order
+            }
+        });
+        for(Integer[] subLst: lst){
+            printList(subLst);
+        }
     }
 }
 
