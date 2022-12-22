@@ -1,5 +1,7 @@
 package coding;
 
+import tutorial.enums.MONTH;
+
 /**
  * @author zhanzq
  */
@@ -8,6 +10,7 @@ public class Coding {
 
     public static void main(String[] args){
         System.out.println(convertToBase7(100));
+        System.out.println(MONTH.Jan.getName());
     }
 
     public static String convertToBase7(int num){
